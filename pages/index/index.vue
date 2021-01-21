@@ -20,6 +20,9 @@
                 <button @click="submit">Submit</button>
             </uni-forms>
         </view>
+        <view>
+            <button type="primary" @click="register">注册</button>
+        </view>
         <view class="btn-list">
             <button type="primary" @click="add">新增一条数据</button>
             <button type="primary" @click="remove">删除一条数据</button>
@@ -53,6 +56,39 @@
         computed: {
         },
         methods: {
+            register(){
+                // 客户端代码
+                uniCloud.callFunction({
+                    name: 'register',
+                    data: {
+                        username: 'mili',
+                        password: '940665425'
+                    },
+                    success(res){
+                        if(res.result.code === 0) {
+                            // 2.8.0版本起调整为蛇形uni_id_token（调整后在一段时间内兼容驼峰uniIdToken）
+                            uni.setStorageSync('uni_id_token',res.result.token)
+                            uni.setStorageSync('uni_id_token_expired', res.result.tokenExpired)
+                            // 其他业务代码，如跳转到首页等
+                            uni.showToast({
+                                title: '注册成功',
+                                icon: 'none'
+                            })
+                        } else {
+                            uni.showModal({
+                                content: res.result.message,
+                                showCancel: false
+                            })
+                        }
+                    },
+                    fail(res){
+                        uni.showModal({
+                            content: res,
+                            showCancel: false
+                        })
+                    }
+                })
+            },
             sleepHoursChange(val){
                 let time = dayjs(this.form.endSleepTime) - dayjs(this.form.startSleepTime);
                 let timestr = this.secondToDate(time / 1000)

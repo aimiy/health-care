@@ -1,6 +1,6 @@
 {
-	"passwordSecret": "passwordSecret-demo",
-	"tokenSecret": "tokenSecret-demo",
+	"passwordSecret": "zijuezilvxiaozumiolyzijuezilvxiaozu",
+	"tokenSecret": "zijuezilvxiaozumiolyzijuezilvxiaozu",
 	"tokenExpiresIn": 7200,
 	"tokenExpiresThreshold": 600,
 	"passwordErrorLimit": 6,
@@ -12,8 +12,8 @@
 		"tokenExpiresIn": 2592000,
 		"oauth" : {
 			"weixin" : {
-				"appid" : "weixin appid",
-				"appsecret" : "weixin appsecret"
+				"appid" : "wx285ed7b5f0df827e",
+				"appsecret" : "a194e191424e196b49d17f603320b9c8"
 			},
 			"apple":	{
 				"bundleId": "your APP bundleId"
