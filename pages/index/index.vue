@@ -59,10 +59,13 @@
             register(){
                 // 客户端代码
                 uniCloud.callFunction({
-                    name: 'register',
+                    name: 'use-common',
                     data: {
-                        username: 'mili',
-                        password: '940665425'
+                    	action: 'register',
+                    	params: {
+                    		username: 'mili',
+                    		password: '940665425'
+                    	}
                     },
                     success(res){
                         if(res.result.code === 0) {
