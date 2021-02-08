@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hello-common": "file:../common/hello-common",
-    "uni-id": "file:../common/uni-id"
+    "hello-common": "file:../common/hello-common"
   }
 }

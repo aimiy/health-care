@@ -64,7 +64,8 @@
                     	action: 'register',
                     	params: {
                     		username: 'mili',
-                    		password: '940665425'
+                    		password: '940665425',
+                            needPermission:false
                     	}
                     },
                     success(res){
